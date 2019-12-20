@@ -10,8 +10,15 @@ class Log {
   generateMessage(args, style, color) {
     let argLen = args.length;
     // to block out all other logs unless specific color
-    if (process && process.env && process.env.LOG_COLOR && (color.toLowerCase && color.toLowerCase() !== process.env.LOG_COLOR)) {
-       return;
+    if (
+      process &&
+      process.env &&
+      process.env.LOG_COLOR &&
+      color &&
+      color.toLowerCase &&
+      color.toLowerCase() !== process.env.LOG_COLOR
+    ) {
+      return;
     }
     if (color) {
       color = `background: ${color}; color: #FFFFFF`;
