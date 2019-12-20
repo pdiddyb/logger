@@ -10,9 +10,9 @@ class Log {
   generateMessage(args, style, color) {
     let argLen = args.length;
     // to block out all other logs unless specific color
-    // if (!color || (color.toLowerCase && color.toLowerCase() != 'orange')) {
-    //   return;
-    // }
+    if (process && process.env && process.env.LOG_COLOR && (color.toLowerCase && color.toLowerCase() !== process.env.LOG_COLOR)) {
+       return;
+    }
     if (color) {
       color = `background: ${color}; color: #FFFFFF`;
       argLen--;
@@ -49,14 +49,19 @@ class Log {
     }
   }
   color() {
+    try{
     if (process.env.LOG_LEVEL === "dev") {
       let color = arguments[arguments.length - 1];
-      // console.log(arguments);
+      this.generateMessage(arguments, logStyle.trace, color);
+    }} catch {
       this.generateMessage(arguments, logStyle.trace, color);
     }
   }
   trace() {
+    try{
     if (process.env.LOG_LEVEL === "dev") {
+      this.generateMessage(arguments, logStyle.trace);
+    }} catch {
       this.generateMessage(arguments, logStyle.trace);
     }
   }
