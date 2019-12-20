@@ -33,4 +33,5 @@ Log.info('This is an info message and will always show');
 Log.warn('This is a warning message and will always show');
 Log.error('This is an error and will always show');
 ```
+
 :soccer:
