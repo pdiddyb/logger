@@ -1,4 +1,4 @@
-# logger :hammer_and_wrench:
+# :hammer_and_wrench:logger
 
 ## Javascript logger repo with various levels based on environment variables and colors in chrome
 
@@ -10,7 +10,7 @@ npm install @pdiddyb/logger
 
 ### Configuration
 
-If you want to see all messages even traces and color logs, you will need to set an environemnt variable LOG_LEVEL to dev.
+If you want to see all messages even traces and color logs, you will need to set an environment variable LOG_LEVEL to dev.  This assumes you are using webpack and declaring environment variables that are accessed in your application using process.env.VARIABLE.  If not, then you will get all logging messages and will not be able to just use trace and color in certain environments.
 
 ```javascript
 LOG_LEVEL=dev
