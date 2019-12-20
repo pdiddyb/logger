@@ -1,6 +1,6 @@
 {
     "name": "@pdiddyb/logger",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "description": "Logs to the console based on environment settings and does color for Chrome",
     "license": "Apache",
     "repository": "pdiddyb/logger",
